@@ -1,0 +1,37 @@
+html,
+body {
+  background: url("../img/bg4.jpg") bottom fixed no-repeat;
+  color: beige;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: url("../img/chuteira_.png") 50 40, auto;
+}
+
+.bolaFooter:hover {
+  transform: scale(1) rotate(720deg) translate(-10px, 0px);
+  transition: 1.5s;
+}
+
+.bolaFooter:active {
+  transform: scale(1.2) translate(600px, 0px);
+  transition: 1s;
+}
+
+.bolaFooter {
+  transition: 1.5s;
+}
+
+#bola:hover {
+  transform: scale(0.8) rotate(800deg) translate(5px, 5px);
+  transition: 0.4s;
+}
+
+#bola:active {
+  transform: scale(0.2) translate(1000px, 1000px);
+  transition: 0.1s;
+}
+
+#bola {
+  transform: scale(1) rotate(360deg) translate(5px, 5px);
+  transition: 1.5s;
+}
