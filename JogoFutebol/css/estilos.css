@@ -1,37 +1,58 @@
 html,
 body {
-  background: url("../img/bg4.jpg") bottom fixed no-repeat;
+  background: url("../img/bg2.jpg") bottom fixed no-repeat;
   color: beige;
-  margin: 0 auto;
   overflow: hidden;
-  cursor: url("../img/chuteira_.png") 50 40, auto;
+  cursor: url("../img/chuteira_1.png") 10 20, crosshair;
 }
 
-.bolaFooter:hover {
-  transform: scale(1) rotate(720deg) translate(-10px, 0px);
+.bolaPlacar {
+  width: 15px;
   transition: 1.5s;
 }
 
-.bolaFooter:active {
-  transform: scale(1.2) translate(600px, 0px);
-  transition: 1s;
+.bolaPlacar:hover {
+  transform: scale(1.5);
+  transition: 0.2s;
 }
 
-.bolaFooter {
-  transition: 1.5s;
+header .bolaPlacar:active {
+  transform: scale(1.2) rotate(0deg) translate(0, 1000px);
+  transition: 0.5s;
+}
+
+footer .bolaPlacar:active {
+  transform: scale(1.2) rotate(0deg) translate(0, -1000px);
+  transition: 0.5s;
+}
+
+
+
+.tamanho0 {
+  width: 30px;
+  height: 30px;
+}
+
+.tamanho1 {
+  width: 40px;
+  height: 40px;
+}
+
+.tamanho2 {
+  width: 50px;
+  height: 50px;
 }
 
 #bola:hover {
-  transform: scale(0.8) rotate(800deg) translate(5px, 5px);
+  transform: scale(0.9) rotate(-360deg) translate(0px, 0px);
   transition: 0.4s;
 }
 
-#bola:active {
-  transform: scale(0.2) translate(1000px, 1000px);
-  transition: 0.1s;
-}
-
-#bola {
-  transform: scale(1) rotate(360deg) translate(5px, 5px);
-  transition: 1.5s;
+#jogo {
+  position: absolute;
+  border: 5px solid red;
+  top: 11%;
+  left: 10%;
+  height: 78%;
+  width: 80%;
 }

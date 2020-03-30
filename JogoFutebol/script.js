@@ -15,31 +15,77 @@ var altura = 0;
 var largura = 0;
 
 verificaTamanho = () => {
-  altura = window.innerHeight;
-  largura = window.innerWidth;
+  altura = document.getElementById("jogo").scrollHeight;
+  largura = document.getElementById("jogo").scrollWidth;
+  altura -= 100;
+  largura -= 100;
   return altura, largura;
 };
 
 verificaTamanho();
+tamanhoBola = () => {
+  let tamanho = Math.floor(Math.random() * 3);
+  switch (tamanho) {
+    case 0:
+      return "tamanho0";
+
+    case 1:
+      return "tamanho1";
+
+    case 2:
+      return "tamanho2";
+  }
+};
+
+ladoChute = () => {
+  let lado = Math.floor(Math.random() * 2);
+  switch (lado) {
+    case 0:
+      return "ladoA";
+    case 1:
+      return "ladoB";
+  }
+};
 
 posicaoAleatoria = () => {
-  var posicaoX = Math.floor(Math.random() * largura) - 100;
-  var posicaoY = Math.floor(Math.random() * altura) - 100;
+  if (document.getElementById("bola")) {
+    //document.getElementById("bola").remove();
 
-  posicaoY = posicaoY < 0 ? 0 : posicaoY;
-  posicaoX = posicaoX < 0 ? 0 : posicaoX;
+    let imgBolaX = document.createElement("img");
+    imgBolaX.src = "img/bolaX.png";
+    imgBolaX.className = "bolaPlacar";
+    document.getElementById("contadorNegativo").appendChild(imgBolaX);
+  }
 
-  console.log(posicaoX, posicaoY, largura, altura);
+  var posicaoX = Math.floor(Math.random() * largura);
+  var posicaoY = Math.floor(Math.random() * altura);
+
+  console.log(largura, posicaoX);
+  console.log(altura, posicaoY);
 
   let bola = document.createElement("img");
-  bola.src = "img/bola1.png";
-  bola.style.width = "50px";
+  bola.src = "img/bola3.png";
+  bola.className = `${tamanhoBola()} ${ladoChute()}`;
   bola.style.left = `${posicaoX}px`;
   bola.style.top = `${posicaoY}px`;
   bola.style.position = `absolute`;
-  bola.style;
+  bola.style.padding = "2px";
   bola.id = "bola";
+  bola.onclick = function clique() {
+    bola.style.transform = "scale(0.1) translate(-1000px, -1000px)";
+    bola.style.transition = "0.5s";
+    let imgBola = document.createElement("img");
+    imgBola.src = "img/bola3.png";
+    imgBola.className = "bolaPlacar";
+    document.getElementById("contadorPositivo").appendChild(imgBola);
+  };
 
   document.getElementById("jogo").appendChild(bola);
 };
-posicaoAleatoria();
+
+setInterval(() => {
+  posicaoAleatoria();
+}, 1000);
+
+console.time(0);
+console.timeEnd(30);
