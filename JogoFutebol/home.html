@@ -5,9 +5,21 @@
     <!-- Meta tags Obrigatórias -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Meta tags Obrigatórias -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- Bootstrap início -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <!-- Bootstrap fim -->
+
     <!-- Estilo customizado -->
     <link rel="stylesheet" href="css/estilos.css" />
     <!-- Font Awesome -->
@@ -21,7 +33,8 @@
 <body onresize="verificaTamanho()">
 
     <header>
-        <div class="container">
+        <div class="">
+
 
         </div>
     </header>
@@ -29,10 +42,80 @@
     <div id="jogo"></div>
 
 
-    <footer>
+    <div class="d-flex justify-content-around">
+
+        <div class="item">
+            <figure class="btn btn-success" id="placarCerto">
+                <img src="img/bola1C.png" width="25" alt="">
+                <figcaption id="certos">0</figcaption>
+            </figure>
+        </div>
+        <div class="item">
+            <figure class="btn btn-primary btn-lg" id="tempo">
+                <i class="far fa-clock fa-2x"></i>
+                <figcaption id="cronometro">0</figcaption>
+            </figure>
+        </div>
+        <div class="item">
+            <figure class="btn btn-dark" id="tempo">
+                <i class="fas fa-parking"> </i>
+                <span id="multiplicador">1</span>
+            </figure>
+        </div>
+        <div class="item">
+            <figure class="btn btn-warning btn-lg" id="tempo">
+                <i class="fas fa-bolt fa-2x"></i>
+                <figcaption id="pontos">0</figcaption>
+            </figure>
+        </div>
+        <div class="item">
+            <figure class="btn btn-danger" id="placarErrado">
+                <img src="img/bolaX.png" width="25" alt="">
+                <figcaption id="errados">0</figcaption>
+            </figure>
+
+        </div>
+    </div>
+
+
+    <footer class="d-flex justify-content-between">
+        <div class="item">
+            <span id="contadorPositivo"></span>
+        </div>
+        <div class="item">
+            <span id="contadorNegativo"></span>
+        </div>
     </footer>
     <!-- Javascript -->
     <script src="script.js"></script>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" id="estruturaModal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+
+                </div>
+                <div class="modal-footer">
+                    <a id="modalBotao1" href="">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </a>
+                    <a id="modalBotao2" href="">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
