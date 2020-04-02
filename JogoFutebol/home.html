@@ -2,119 +2,114 @@
 <html lang="pt-br">
 
 <head>
-    <!-- Meta tags Obrigatórias -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap início -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-    <!-- Bootstrap fim -->
-
-    <!-- Estilo customizado -->
-    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/home.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
-
-    <title>Moleque Arretado</title>
 </head>
 
-
-<body onresize="verificaTamanho()">
-
-    <header>
-        <div class="">
+<body onload="girando()">
 
 
-        </div>
-    </header>
+    <div class="caixa1 d-flex justify-content-center align-items-center">
+        <div class="rounded item" id="principal">
+            <div class="m-3 d-flex btn justify-content-center align-items-center" id="bolas">
+                <img src="img/bolaX.png" id="bola1" width="70" class="item align-self-end" alt="" />
+                <img src="img/bola.png" id="bola2" width="70" class="item align-self-start" alt="" />
+                <img src="img/bola1C.png" id="bola3" width="70" class="item align-self-center" alt="" />
+            </div>
+            <div>
 
-    <div id="jogo"></div>
+            </div>
+
+            <h1 class="m-3 d-flex justify-content-end align-items-end display-4">
+                Futebol Click
+            </h1>
+            <div id="menu">
+                <button id="nivel" for="tela" class=" mt-4 btn-primary btn-lg form-control item align-self-center">
+                    NÍVEL</button>
+                <select class="custom-select dropdown-danger btn" size="3" id="tela" name="tela">
+                    <!-- <option class="" value="">-- Selecione o nível --</option> -->
+                    <option class="" value="normal">Normal</option>
+                    <option class="" value="dificil">Difícil</option>
+                    <option class="" value="chucknorris">Pelé</option>
+                </select>
+                <a href="game.html">
+                    <button id="jogar" type="button"
+                        class=" mt-4 btn-outline-success btn-lg form-control item align-self-center">
+                        JOGAR</button>
+                </a>
+            </div>
 
 
-    <div class="d-flex justify-content-around">
-
-        <div class="item">
-            <figure class="btn btn-success" id="placarCerto">
-                <img src="img/bola1C.png" width="25" alt="">
-                <figcaption id="certos">0</figcaption>
-            </figure>
-        </div>
-        <div class="item">
-            <figure class="btn btn-primary btn-lg" id="tempo">
-                <i class="far fa-clock fa-2x"></i>
-                <figcaption id="cronometro">0</figcaption>
-            </figure>
-        </div>
-        <div class="item">
-            <figure class="btn btn-dark" id="tempo">
-                <i class="fas fa-parking"> </i>
-                <span id="multiplicador">1</span>
-            </figure>
-        </div>
-        <div class="item">
-            <figure class="btn btn-warning btn-lg" id="tempo">
-                <i class="fas fa-bolt fa-2x"></i>
-                <figcaption id="pontos">0</figcaption>
-            </figure>
-        </div>
-        <div class="item">
-            <figure class="btn btn-danger" id="placarErrado">
-                <img src="img/bolaX.png" width="25" alt="">
-                <figcaption id="errados">0</figcaption>
-            </figure>
 
         </div>
     </div>
+    <div class="conteudo" ->
+        <h3 class="text-info">Como Jogar ?</h3>
+        <p class="">
+            O jogo se baseia em acertar o maximo de bolas possíveis em um prazo de <stron>30 segundos</stron>.
+        </p>
 
 
-    <footer class="d-flex justify-content-between">
-        <div class="item">
-            <span id="contadorPositivo"></span>
-        </div>
-        <div class="item">
-            <span id="contadorNegativo"></span>
-        </div>
-    </footer>
-    <!-- Javascript -->
-    <script src="script.js"></script>
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" id="estruturaModal">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="modalBody">
-
-                </div>
-                <div class="modal-footer">
-                    <a id="modalBotao1" href="">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </a>
-                    <a id="modalBotao2" href="">
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </a>
-                </div>
+        <h3 class="text-info mt-5">Eendenda sobre os placares:</h3>
+        <div class="row justify-content-around align-items-center dados">
+            <div class="col-md-6 dadosItem">
+                <figure class="btn btn-success" id="placarCerto">
+                    <img src="img/bola1C.png" width="25" alt="">
+                </figure>
+                <p>
+                    <h5 class="text-success">Bolas verdes</h5> Informa a quantidade de bolas acertadas.
+                </p>
             </div>
+
+            <div class="col-md-6 dadosItem">
+                <figure class="btn btn-danger " id="placarErrado">
+                    <img src="img/bolaX.png" width="25" alt="">
+                </figure>
+
+                <p>
+                    <h5 class="text-danger">Bolas vermelhas</h5> Informa a quantidade de bolas perdidas.
+                </p>
+            </div>
+            <div class="col-md-12 dadosItem">
+                <figure class="btn btn-dark" id="tempo">
+                    <i class="fas fa-parking"> </i>
+                    <figcaption id="multiplicador"></figcaption>
+                </figure>
+                <p>
+                    <h5 class="text-dark">Pontos por bola</h5> É a quantidade de pontos recebidos ao acertar uma bola,
+                    esse valor também é decrescido em caso de bolas perdidas.
+                </p>
+            </div>
+            <div class="col-md-4 dadosItem">
+                <figure class="btn btn-primary btn-lg" id="tempo">
+                    <i class="far fa-clock fa-1x"></i>
+                </figure>
+                <p>
+                    <h5 class="text-primary">Tempo</h5> Cronometro do jogo, mostra quantos segundos faltam para acabar.
+                </p>
+            </div>
+
+            <div class="col-md-4 dadosItem">
+                <figure class="btn btn-warning btn-lg" id="tempo">
+                    <i class="fas fa-bolt fa-1x"></i>
+                </figure>
+                <p>
+                    <h5 class="text-warning">Pontos</h5> Placar de pontos mostra o total de pontos ganhos no decorrer da
+                    partida.
+                </p>
+            </div>
+
+
         </div>
+
+    </div>
+    <div class="caixa2">
+        Caixa2
     </div>
 </body>
 

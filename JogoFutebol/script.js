@@ -27,7 +27,7 @@ var altura = 0;
 var largura = 0;
 var pontosPositivos = 0;
 var pontosNegativos = 0;
-var tempo = 5;
+var tempo = 30;
 var pontos = 0;
 var contador = 1;
 document.getElementById("cronometro").innerHTML = tempo;
@@ -162,10 +162,8 @@ var cronometro = setInterval(() => {
       ).innerHTML = `Você acertou ${pontosPositivos} e errou apenas ${pontosNegativos}. Seu escore foi de ${pontos} pontos!`;
       document.getElementById("modalBotao1").className = "btn btn-info";
       document.getElementById("modalBotao2").className = "btn btn-primary";
-      document.getElementById("modalBotao1").href = "";
       document.getElementById("modalBotao1").innerHTML = "Inicio";
       document.getElementById("modalBotao2").innerHTML = "Jogue novamente";
-      document.getElementById("modalBotao2").href = "home.html";
       document.getElementById("estruturaModal").className =
         "bg-success modal-content";
       $("#modal").modal("show");
@@ -180,10 +178,8 @@ var cronometro = setInterval(() => {
       ).innerHTML = `Você errou ${pontosNegativos} e acertou ${pontosPositivos}. Seu escore foi ${pontos}`;
       document.getElementById("modalBotao1").className = "btn btn-info";
       document.getElementById("modalBotao2").className = "btn btn-primary";
-      document.getElementById("modalBotao1").href = "";
       document.getElementById("modalBotao1").innerHTML = "Inicio";
       document.getElementById("modalBotao2").innerHTML = "Jogue novamente";
-      document.getElementById("modalBotao2").href = "home.html";
       document.getElementById("estruturaModal").className =
         "bg-danger modal-content";
       $("#modal").modal("show");
@@ -198,10 +194,8 @@ var cronometro = setInterval(() => {
       ).innerHTML = `Você errou ${pontosNegativos} e acertou ${pontosPositivos}. Seu escore foi ${pontos}.`;
       document.getElementById("modalBotao1").className = "btn btn-info";
       document.getElementById("modalBotao2").className = "btn btn-primary";
-      document.getElementById("modalBotao1").href = "";
       document.getElementById("modalBotao1").innerHTML = "Inicio";
       document.getElementById("modalBotao2").innerHTML = "Jogue novamente";
-      document.getElementById("modalBotao2").href = "home.html";
       document.getElementById("estruturaModal").className =
         "bg-dark modal-content";
       $("#modal").modal("show");
