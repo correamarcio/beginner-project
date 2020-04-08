@@ -1,0 +1,119 @@
+html,
+body {
+  background: url("bg2.jpg") bottom fixed no-repeat;
+  color: rgb(165, 165, 165);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  cursor: url("chuteira_1.png") 10 20, crosshair;
+  margin: 0;
+  height: 100%;
+  font-family: cursive, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.bolaPlacar {
+  width: 15px;
+  transition: 1.5s;
+}
+
+.bolaPlacar:hover {
+  transform: scale(1.5);
+  transition: 0.2s;
+}
+
+header .bolaPlacar:active {
+  transform: scale(1.2) rotate(0deg) translate(0, 1000px);
+  transition: 0.5s;
+}
+
+footer .bolaPlacar:active {
+  transform: scale(1.2) rotate(0deg) translate(0, -1000px);
+  transition: 0.5s;
+}
+
+
+.tamanho0 {
+  width: 25px;
+  height: 25px;
+}
+
+.tamanho1 {
+  width: 30px;
+  height: 30px;
+}
+
+.tamanho2 {
+  width: 40px;
+  height: 40px;
+}
+
+#bola:hover {
+  transform: scale(1.4);
+  transition: 0.2s;
+}
+
+body {
+  position: static;
+}
+
+#jogo {
+  position: absolute;
+  top: 15%;
+  left: 13%;
+  height: 65%;
+  width: 70%;
+  clear: both;
+}
+
+
+header {
+  position: absolute;
+  top: 0%;
+  left: 10%;
+  height: 10%;
+  width: 80%;
+}
+
+footer {
+  position: absolute;
+  top: 90%;
+  left: 10%;
+  height: 10%;
+  width: 80%;
+}
+
+
+.bolaCerta {
+  transform: scale(0.8) translate(0px, -50px);
+  transition: 0.1s;
+}
+
+.bolaPerdida {
+  transform: scale(0.8) translate(0px, 50px);
+  transition: 0.1s;
+}
+
+#resultado {
+  display: none;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+  text-shadow: 1px -1px rgb(194, 184, 184);
+  font-weight: bold;
+}
+
+.jogarNovamente:hover {
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+.jogarNovamente {
+  transition: 0.8s;
+}
+
+#resultadoPositivo,
+#resultadoNegativo {
+  display: none;
+}
