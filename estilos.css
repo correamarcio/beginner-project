@@ -7,10 +7,9 @@ body {
   cursor: url("chuteira_1.png") 10 20, crosshair;
   margin: 0;
   height: 100vh;
-  font-family: 'Gill Sans',
-    'Gill Sans MT',
-    Calibri,
-    'Trebuchet MS',
+  font-family: cursive,
+    Arial,
+    Helvetica,
     sans-serif;
 }
 
@@ -87,7 +86,7 @@ footer {
 
 
 .bolaCerta {
-  transform: scale(0.8) translate(0px, -50px);
+  transform: scale(0.8) rotate(360deg) translate(0px, -5px);
   transition: 0.1s;
 }
 

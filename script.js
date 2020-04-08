@@ -15,9 +15,8 @@ var JOGO = (function () {
   function verificaTamanhoPalcoJogo() {
     alturaPalcoJogo = document.querySelector('#jogo').scrollHeight;
     larguraPalcoJogo = document.querySelector('#jogo').scrollWidth;
-    console.log(alturaPalcoJogo, larguraPalcoJogo);
+    return alturaPalcoJogo, larguraPalcoJogo
   };
-  // verificaTamanhoPalcoJogo()
 
   nivel = window.location.search
   nivel = nivel.replace('?', '')
@@ -29,12 +28,12 @@ var JOGO = (function () {
       break;
 
     case 2:
-      tempoDaBola = 1200
+      tempoDaBola = 1000
       var multiplicadorPontos = 10
       break;
 
     case 3:
-      tempoDaBola = 900
+      tempoDaBola = 500
       var multiplicadorPontos = 20
       break;
     default:
@@ -161,9 +160,6 @@ var JOGO = (function () {
     } else if (bolasAcertadas < bolasPerdidas) {
       console.log('Perdeu ladrão hahaha', bolasAcertadas, bolasPerdidas);
       perdeu.classList.add('d-flex')
-    } else {
-      console.log('empatou!', bolasAcertadas, bolasPerdidas);
-
     }
 
   }
