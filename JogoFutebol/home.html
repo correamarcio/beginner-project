@@ -4,78 +4,90 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/home.css" />
+
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/home.css" />
+
+
+
 </head>
 
-<body onload="girando()">
+<body>
 
 
-    <div class="caixa1 d-flex justify-content-center align-items-center">
-        <div class="rounded item" id="principal">
+    <div class="capa d-flex justify-content-center align-items-center " id="capa">
+        <div class="rounded item menu-principal">
             <div class="m-3 d-flex btn justify-content-center align-items-center" id="bolas">
-                <img src="img/bolaX.png" id="bola1" width="70" class="item align-self-end" alt="" />
-                <img src="img/bola.png" id="bola2" width="70" class="item align-self-start" alt="" />
-                <img src="img/bola1C.png" id="bola3" width="70" class="item align-self-center" alt="" />
+                <img src="img/bolaErrada.png" width="70" class="item align-self-end bolas" alt="" />
+                <img src="img/bola.png" width="70" class="item align-self-start bolas" alt="" />
+                <img src="img/bolaCerta.png" width="70" class="item align-self-center bolas" alt="" />
             </div>
             <div>
 
             </div>
 
-            <h1 class="m-3 d-flex justify-content-end align-items-end display-4">
+            <h1 class="m-3 text-success">
                 Futebol Click
             </h1>
             <div id="menu">
                 <button id="nivel" for="tela" class=" mt-4 btn-primary btn-lg form-control item align-self-center">
                     NÍVEL</button>
                 <select class="custom-select dropdown-danger btn" size="3" id="tela" name="tela">
-                    <!-- <option class="" value="">-- Selecione o nível --</option> -->
-                    <option class="" value="normal">Normal</option>
-                    <option class="" value="dificil">Difícil</option>
-                    <option class="" value="chucknorris">Pelé</option>
+                    <option class="" value="1">Normal</option>
+                    <option class="" value="2">Difícil</option>
+                    <option class="" value="3">Pelé</option>
                 </select>
-                <a href="game.html">
-                    <button id="jogar" type="button"
-                        class=" mt-4 btn-outline-success btn-lg form-control item align-self-center">
-                        JOGAR</button>
-                </a>
+                <button onclick="iniciarJogo()" id="jogar" type="button"
+                    class=" mt-4 mb- btn-outline-success btn-lg form-control item align-self-center">JOGAR</button>
             </div>
 
 
 
         </div>
     </div>
-    <div class="conteudo" ->
+    <div class="conteudo" id="informacoes">
         <h3 class="text-info">Como Jogar ?</h3>
         <p class="">
-            O jogo se baseia em acertar o maximo de bolas possíveis em um prazo de <stron>30 segundos</stron>.
+            O jogo se baseia em acertar o maximo de bolas possíveis em um prazo de <strong>30 segundos</strong>, mostre
+            suas habilidades e chame seus amigos para jogar.
         </p>
 
 
-        <h3 class="text-info mt-5">Eendenda sobre os placares:</h3>
+        <h3 class="text-info mt-5 mb-5">Endenda sobre os placares:</h3>
         <div class="row justify-content-around align-items-center dados">
-            <div class="col-md-6 dadosItem">
+            <div class="col-md-4 dadosItem">
                 <figure class="btn btn-success" id="placarCerto">
-                    <img src="img/bola1C.png" width="25" alt="">
+                    <img src="img/bolaCerta.png" width="25" alt="">
                 </figure>
                 <p>
                     <h5 class="text-success">Bolas verdes</h5> Informa a quantidade de bolas acertadas.
                 </p>
             </div>
 
-            <div class="col-md-6 dadosItem">
+            <div class="col-md-4">
                 <figure class="btn btn-danger " id="placarErrado">
-                    <img src="img/bolaX.png" width="25" alt="">
+                    <img src="img/bolaErrada.png" width=" 25" alt="">
                 </figure>
 
                 <p>
                     <h5 class="text-danger">Bolas vermelhas</h5> Informa a quantidade de bolas perdidas.
                 </p>
             </div>
-            <div class="col-md-12 dadosItem">
+            <div class="col-md-4">
+                <figure class="btn btn-primary btn-lg" id="tempo">
+                    <i class="far fa-clock fa-1x"></i>
+                </figure>
+                <p>
+                    <h5 class="text-primary">Tempo</h5> Mostra quantos segundos faltam para acabar.
+                </p>
+            </div>
+            <div class="col-md-4">
                 <figure class="btn btn-dark" id="tempo">
                     <i class="fas fa-parking"> </i>
                     <figcaption id="multiplicador"></figcaption>
@@ -85,16 +97,8 @@
                     esse valor também é decrescido em caso de bolas perdidas.
                 </p>
             </div>
-            <div class="col-md-4 dadosItem">
-                <figure class="btn btn-primary btn-lg" id="tempo">
-                    <i class="far fa-clock fa-1x"></i>
-                </figure>
-                <p>
-                    <h5 class="text-primary">Tempo</h5> Cronometro do jogo, mostra quantos segundos faltam para acabar.
-                </p>
-            </div>
 
-            <div class="col-md-4 dadosItem">
+            <div class="col-md-4">
                 <figure class="btn btn-warning btn-lg" id="tempo">
                     <i class="fas fa-bolt fa-1x"></i>
                 </figure>
@@ -108,9 +112,61 @@
         </div>
 
     </div>
-    <div class="caixa2">
-        Caixa2
-    </div>
+
+
+
+    <a id="btn-top" class="text-info" href="#capa">
+        <i class="far fa-arrow-alt-circle-up fa-3x"></i>
+    </a>
+
+    <a id="btn-botton" class="text-warning" href="#informacoes">
+        <i class="far fa-arrow-alt-circle-down fa-3x"></i>
+    </a>
+
+    <footer class="d-flex justify-content-center align-items-center">
+        <a class="text-success" href="https://whats.link/devmarciocorrea">
+            <i class="fab fa-whatsapp fa-3x"></i>
+        </a>
+        <a class="text-info" href="https://github.com/correamarcio">
+            <i class="fab fa-github fa-3x"></i>
+        </a>
+    </footer>
+
+
+
+
+    <script>
+
+        function iniciarJogo() {
+            var nivel = document.querySelector('#tela').value
+
+            if (nivel === '') {
+                alert('Selecione um nível para começar o jogo')
+                return false
+            }
+            window.location.href = 'game.html?' + nivel
+        }
+
+
+
+
+        window.onscroll = () => {
+            scroll()
+        }
+        function scroll() {
+            let btn = document.querySelector('#btn-top')
+            let btnBotton = document.querySelector('#btn-botton')
+            if (document.documentElement.scrollTop > 50) {
+                btn.style.display = 'block'
+                btnBotton.style.display = 'none'
+            } else {
+                btn.style.display = 'none'
+                btnBotton.style.display = 'block'
+            }
+        }
+
+
+    </script>
 </body>
 
 </html>
