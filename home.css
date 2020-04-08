@@ -1,8 +1,8 @@
 body,
 html {
     margin: 0;
-    height: 100%;
-    font-family: cursive, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100vh;
+    font-family: Georgia, Times, 'Times New Roman', serif;
 }
 
 h1 {
