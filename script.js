@@ -12,10 +12,12 @@ var JOGO = (function () {
   var pontos = 0
   var tempoDaBola = 0
 
-  let verificaTamanhoPalcoJogo = function () {
-    return alturaPalcoJogo = document.querySelector('#jogo').scrollHeight,
-      larguraPalcoJogo = document.querySelector('#jogo').scrollWidth
-  }();
+  function verificaTamanhoPalcoJogo() {
+    alturaPalcoJogo = document.querySelector('#jogo').scrollHeight;
+    larguraPalcoJogo = document.querySelector('#jogo').scrollWidth;
+    console.log(alturaPalcoJogo, larguraPalcoJogo);
+  };
+  // verificaTamanhoPalcoJogo()
 
   nivel = window.location.search
   nivel = nivel.replace('?', '')
@@ -165,6 +167,8 @@ var JOGO = (function () {
     }
 
   }
-
+  return {
+    palcojogo: verificaTamanhoPalcoJogo()
+  }
 
 })()

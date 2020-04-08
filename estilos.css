@@ -7,10 +7,11 @@ body {
   cursor: url("chuteira_1.png") 10 20, crosshair;
   margin: 0;
   height: 100vh;
-  font-family: Georgia,
-    Times,
-    'Times New Roman',
-    serif;
+  font-family: 'Gill Sans',
+    'Gill Sans MT',
+    Calibri,
+    'Trebuchet MS',
+    sans-serif;
 }
 
 .bolaPlacar {
